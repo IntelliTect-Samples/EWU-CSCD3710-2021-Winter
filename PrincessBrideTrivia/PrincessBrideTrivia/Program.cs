@@ -8,6 +8,7 @@ namespace PrincessBrideTrivia
         public static void Main(string[] args)
         {
             string filePath = GetFilePath();
+            filePath += "Mark";
             Question[] questions = LoadQuestions(filePath);
 
             int numberCorrect = 0;
