@@ -9,6 +9,7 @@ namespace PrincessBrideTrivia
         {
             string filePath = GetFilePath();
             filePath += "Mark";
+            filePath += "Stokes";
             Question[] questions = LoadQuestions(filePath);
 
             int numberCorrect = 0;
