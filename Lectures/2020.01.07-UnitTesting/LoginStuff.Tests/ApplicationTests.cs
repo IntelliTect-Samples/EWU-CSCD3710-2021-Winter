@@ -29,7 +29,7 @@ namespace LoginStuff.Tests
         }
 
         [TestMethod]
-        public void SimpleLoginTest()
+        public void ValidLogin()
         {
             
 
@@ -39,13 +39,6 @@ namespace LoginStuff.Tests
 
         [TestMethod]
         public void InvalidLogin()
-        {
-            Assert.IsFalse(Application.Login(
-                userName: "Inigo.Montoya", password: "Bad Password"));
-        }
-
-        [TestMethod]
-        public void ValidLogin()
         {
             // Arrange
 
