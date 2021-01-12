@@ -27,6 +27,27 @@ namespace PrincessBrideTrivia.Tests
             }
         }
 
+        [TestMethod]
+        public void LoadQuestions_QuestionsNotNull()
+        {
+            string filePath = Path.GetRandomFileName();
+            try
+            {
+                // Arrange
+                GenerateQuestionsFile(filePath, 2);
+
+                // Act
+                Question[] questions = Program.LoadQuestions(filePath);
+
+                // Assert
+                Assert.IsNotNull(questions[0]);
+            }
+            finally
+            {
+                File.Delete(filePath);
+            }
+        }
+
         [DataTestMethod]
         [DataRow("1", true)]
         [DataRow("2", false)]
