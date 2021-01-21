@@ -4,45 +4,6 @@ using System;
 
 namespace _2020._01._19.SomethingSomethingInterfaces
 {
-    public interface IMagicNumberGenerator
-    {
-        string Create();
-    }
-
-    public interface ICookingService
-    {
-        string Create();
-
-        int DoStuff(string todoThing);
-    }
-
-    public static class CookingServiceExtensions
-    {
-        public static int DoStuff(this ICookingService service)
-        {
-            return service.DoStuff("");
-        }
-    }
-
-    public class WaffleService : ICookingService, IMagicNumberGenerator
-    {
-        string ICookingService.Create()
-        {
-            return "Cooking";
-        }
-        string IMagicNumberGenerator.Create()
-        {
-            return "42";
-        }
-
-        public string Create() => "Foo";
-
-        public int DoStuff(string todoThing)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
     [TestClass]
     public class WaffleCookTests
     {
