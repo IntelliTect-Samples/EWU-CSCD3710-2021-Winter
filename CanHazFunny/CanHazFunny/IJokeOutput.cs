@@ -1,5 +1,5 @@
 
 public interface IJokeOutput
 {
-    void printJoke(string joke);
+    void PrintJoke(string joke);
 }

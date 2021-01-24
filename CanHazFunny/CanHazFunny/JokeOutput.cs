@@ -2,7 +2,7 @@ namespace CanHazFunny
 {
     public class JokeOutput : IJokeOutput
     {
-        public void printJoke(string joke)
+        public void PrintJoke(string joke)
         {
             System.Console.WriteLine(joke);
         }
