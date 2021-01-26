@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <LangVersion>9</LangVersion>
+    <CollectCoverage>true</CollectCoverage>
   </PropertyGroup>
 
 </Project>
