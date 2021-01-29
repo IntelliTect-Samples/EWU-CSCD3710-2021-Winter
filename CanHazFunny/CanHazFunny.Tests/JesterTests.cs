@@ -45,5 +45,47 @@ namespace CanHazFunny.Tests
             // Assert
             mock.VerifyAll();
         }
+
+        [TestMethod]
+        public void TellJoke_DiscardJokeContainingChuck_Success()
+        {
+            // Arrange
+            Mock<IJokeService> mock = new (MockBehavior.Strict);
+            mock.SetupSequence(service => service.GetJoke())
+                .Returns("chuck")
+                .Returns("usable joke");
+
+            IOutputWriter consoleWriter = new ConsoleWriter();
+
+            Jester jester = new (mock.Object, consoleWriter);
+
+            // Act
+            jester.TellJoke();
+
+            // Assert
+            mock.VerifyAll();
+            mock.Verify(service => service.GetJoke(), Times.Exactly(2));
+        }
+
+        [TestMethod]
+        public void TellJoke_DiscardJokeContainingNorris_Success()
+        {
+            // Arrange
+            Mock<IJokeService> mock = new (MockBehavior.Strict);
+            mock.SetupSequence(service => service.GetJoke())
+                .Returns("norris")
+                .Returns("usable joke");
+
+            IOutputWriter consoleWriter = new ConsoleWriter();
+
+            Jester jester = new (mock.Object, consoleWriter);
+
+            // Act
+            jester.TellJoke();
+
+            // Assert
+            mock.VerifyAll();
+            mock.Verify(service => service.GetJoke(), Times.Exactly(2));
+        }
     }
 }

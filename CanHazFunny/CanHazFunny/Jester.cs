@@ -24,6 +24,15 @@ namespace CanHazFunny
             OutputWriter = outputWriter;
         }
 
-        public void TellJoke() => OutputWriter.Write(JokeService.GetJoke());
+        public void TellJoke()
+        {
+            string joke = JokeService.GetJoke();
+
+            while (joke.ToLower().Contains("chuck") | joke.ToLower().Contains("norris")) {
+                joke = JokeService.GetJoke();
+            }
+
+            OutputWriter.Write(joke);
+        }
     }
 }
