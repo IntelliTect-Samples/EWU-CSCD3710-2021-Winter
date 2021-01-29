@@ -7,25 +7,25 @@ namespace CanHazFunny.Tests
     [TestClass]
     public class JesterTests
     {
-       [TestMethod]
-       [ExpectedException(typeof(ArgumentNullException))]
-       public void Create_NullJokeService_ArgumentNullException()
-       {
-           IJokeService jokeService = null;
-           IOutputWriter outputWriter = new ConsoleWriter();
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Create_NullJokeService_ArgumentNullException()
+        {
+            IJokeService jokeService = null;
+            IOutputWriter outputWriter = new ConsoleWriter();
 
-           Jester jester = new Jester(jokeService, outputWriter);
-       }
+            Jester jester = new Jester(jokeService, outputWriter);
+        }
 
-       [TestMethod]
-       [ExpectedException(typeof(ArgumentNullException))]
-       public void Create_NullOutputWriter_ArgumentNullException()
-       {
-           IJokeService jokeService = new JokeService();
-           IOutputWriter outputWriter = null;
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Create_NullOutputWriter_ArgumentNullException()
+        {
+            IJokeService jokeService = new JokeService();
+            IOutputWriter outputWriter = null;
 
-           Jester jester = new Jester(jokeService, outputWriter);
-       }
+            Jester jester = new Jester(jokeService, outputWriter);
+        }
 
 
         [TestMethod]
