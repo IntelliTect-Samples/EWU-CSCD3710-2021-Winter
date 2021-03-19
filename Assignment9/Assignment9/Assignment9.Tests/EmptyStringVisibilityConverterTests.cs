@@ -1,6 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Data;
-using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Assignment9.Tests
