@@ -104,8 +104,6 @@ namespace Assignment9
         {
             Contact newContact = new Contact()
             {
-                //FirstName = "",
-                //LastName = "",
                 LastModifiedTime = DateTime.Now
             };
             ContactList.Add(newContact);
