@@ -46,7 +46,7 @@ namespace GenericsHomwork.Tests
             testNode.Insert(number);
         }
         [TestMethod]
-        public void ToString_ValidNode_Success()
+        public void ToString_NonNullData_Success()
         {
             int number = 4;
             Node<int> testNode = new Node<int>(number);
